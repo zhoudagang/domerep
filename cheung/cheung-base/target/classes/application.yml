@@ -1,0 +1,44 @@
+#***********切记(yml文件不能格式化)**************
+
+#端口号  
+server:
+  port: 80
+  
+mybatis:
+ config-location: classpath:mybatis/mybatis.cfg.xml # mybatis配置文件所在路径
+ type-aliases-package: org.cheung.base.vo # 定义所有操作类的别名所在包
+ mapper-locations: # 所有的mapper映射文件
+ - classpath:mybatis/mapper/**/*.xml
+ 
+spring: # 表示该配置直接为Spring容器负责处理
+ thymeleaf:
+    suffix: .html
+    
+ messages: # 表示进行资源配置
+    basename: i18n/Messages,i18n/Pages # 资源文件的名称
+    
+ mail:
+     host: smtp.163.com
+     username: 15371646664@163.com
+     password: ABC123
+     properties:
+       mail.smtp.auth: true
+       mail.smtp.starttls.enable: true
+       mail.smtp.starttls.required: true
+      
+ datasource:
+   type: com.alibaba.druid.pool.DruidDataSource # 配置当前要使用的数据源的操作类型
+   driver-class-name: com.mysql.jdbc.Driver # 配置MySQL的驱动程序类
+   url: jdbc:mysql://localhost:3306/springboot # 数据库连接地址
+   username: root # 数据库用户名
+   password: ok # 数据库连接密码
+   dbcp2:  # 进行数据库连接池的配置
+     min-idle: 5 # 数据库连接池的最小维持连接数
+     initial-size: 5 # 初始化提供的连接数
+     max-total: 5 # 最大的连接数
+     max-wait-millis: 200 # 等待连接获取的最大超时时间
+     
+     
+
+
+  
