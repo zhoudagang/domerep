@@ -28,7 +28,7 @@ public class HelloController {
 		return "hello";
 	}
 	
-	@RequestMapping("/echo")
+	@RequestMapping("/echos")
 	public String echo(String msg) {
 	return "【ECHO】" + msg ;
 	}

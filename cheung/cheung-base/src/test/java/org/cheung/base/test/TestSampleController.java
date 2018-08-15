@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.cheung.base.Application;
 import org.cheung.base.controller.HelloController;
+import org.cheung.base.controller.MessageController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,8 +21,12 @@ public class TestSampleController {
 	@Resource
 	private HelloController helloController;
 	
+	@Resource
+	private MessageController messageController;
+	
 	@Test
 	public void testHome() {
+		System.err.println(messageController.index());
 	}
 
 }
