@@ -18,4 +18,6 @@ public interface IMessageService {
 
 	public String info();
 	
+	
+	
 }
