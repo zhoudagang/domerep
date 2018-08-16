@@ -10,6 +10,7 @@ package org.cheung.base;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**  
 * <p>Title: SampleController</p>  
@@ -18,6 +19,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 * @date 2018年8月15日  
 */
 @SpringBootApplication
+// @EnableScheduling // 启用间隔调度
 public class Application {
 	 public static void main(String[] args) throws Exception {
 		 SpringApplication.run(Application.class, args);
