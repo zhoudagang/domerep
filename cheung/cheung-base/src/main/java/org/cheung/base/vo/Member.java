@@ -9,20 +9,24 @@
 package org.cheung.base.vo;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
- * <p>Title: Member</p>
- * <p>Description:</p>
+ * <p>
+ * Title: Member
+ * </p>
+ * <p>
+ * Description:
+ * </p>
+ * 
  * @author zhougang
  * @date 2018年8月15日
  */
 public class Member implements Serializable {
 	private static final long serialVersionUID = -9072114668185614706L;
 	private String mid;
-	private Integer age;
-	private Double salary;
-	private Date birthday;
+	private String name;
+	private String password;
+	private Integer locked;
 
 	public String getMid() {
 		return mid;
@@ -32,28 +36,28 @@ public class Member implements Serializable {
 		this.mid = mid;
 	}
 
-	public Integer getAge() {
-		return age;
+	public String getName() {
+		return name;
 	}
 
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public Double getSalary() {
-		return salary;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setSalary(Double salary) {
-		this.salary = salary;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
-	public Date getBirthday() {
-		return birthday;
+	public Integer getLocked() {
+		return locked;
 	}
 
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
+	public void setLocked(Integer locked) {
+		this.locked = locked;
 	}
 
 }

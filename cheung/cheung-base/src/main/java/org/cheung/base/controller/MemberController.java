@@ -8,12 +8,13 @@
 */  
 package org.cheung.base.controller;
 
+import javax.annotation.Resource;
+
+import org.cheung.base.service.IMemberService;
 import org.cheung.base.util.AbstractBaseController;
-import org.cheung.base.vo.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**  
 * <p>Title: MemberController</p>  
@@ -24,22 +25,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class MemberController extends AbstractBaseController{
 
-	@RequestMapping(value = "/addPre", method = RequestMethod.GET)
-	public String addPre() { // 增加前的准备操作路径
-		return "message/member_add" ;
+	@Resource
+	private IMemberService memberService;
+	@RequestMapping(value="/member/get",method=RequestMethod.POST)
+	public Object get(String mid) {
+	return this.memberService.get(mid) ;
 	}
-	
-	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	@ResponseBody
-	public Object add(Member vo) { // 增加前的准备操作路径
-		return vo ;
+	@RequestMapping(value="/member/auth",method=RequestMethod.POST)
+	public Object auth(String mid) {
+	return this.memberService.listAuthByMember(mid) ;
 	}
-	
-	@RequestMapping(value="/get")
-	@ResponseBody
-	public String get() {
-		System.out.println("除法计算：" + (10 / 0));
-		return "hello world" ;
-	}
+
 
 }
